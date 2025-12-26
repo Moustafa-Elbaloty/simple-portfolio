@@ -44,6 +44,7 @@ body.light {
     --text-muted: #6b7280;
 }
 
+
 /*  GLOBAL*/
 * {
     margin: 0;
@@ -213,6 +214,38 @@ body.scrolled .navbar {
     padding-bottom: 10px;
 }
 
+body.light .navbar {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light .nav-links a {
+    color: #1f2937;
+    /* Gray-800 */
+}
+
+body.light .nav-links a:hover,
+body.light .nav-links a.active {
+    color: var(--accent);
+}
+
+body.light .logo {
+    color: #111827;
+    /* Gray-900 */
+}
+
+body.light .nav-actions button {
+    background: rgba(0, 0, 0, 0.05);
+    color: #111827;
+    box-shadow: none;
+}
+
+body.light.scrolled .navbar {
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
 /* HERO*/
 .hero {
     min-height: 100vh;
@@ -281,7 +314,7 @@ body.scrolled .navbar {
     margin-bottom: 40px;
 }
 
-/* CARDS (GLASS) */
+/* CARDS  */
 .skill-card,
 .project-card,
 .testimonial-card,
@@ -295,12 +328,30 @@ body.scrolled .navbar {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+body.dark .skill-card,
+body.dark .project-card,
+body.dark .testimonial-card,
+body.dark .contact-card {
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
 .skill-card:hover,
 .project-card:hover,
 .testimonial-card:hover,
 .contact-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: var(--shadow-lg);
+}
+
+body.dark .skill-card:hover,
+body.dark .project-card:hover,
+body.dark .testimonial-card:hover,
+body.dark .contact-card:hover {
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(99, 102, 241, 0.25);
 }
 
 /* GRIDS */
@@ -417,7 +468,7 @@ body.scrolled .navbar {
     width: 100%;
     padding: 14px 16px;
     border-radius: var(--radius);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid #5a5b6159;
     background: transparent;
     color: var(--text);
     font-family: inherit;
