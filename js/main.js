@@ -1,6 +1,4 @@
-/* ===============================
-   ELEMENTS
-================================ */
+
 const body = document.body;
 
 const themeToggle = document.getElementById("themeToggle");
@@ -13,14 +11,10 @@ const translatableElements = document.querySelectorAll("[data-en]");
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
 
-/* ===============================
-   STATE
-================================ */
+
 let currentLang = localStorage.getItem("lang") || "en";
 
-/* ===============================
-   INIT (LOAD SAVED SETTINGS)
-================================ */
+
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
     body.classList.remove("dark", "light");
@@ -30,9 +24,6 @@ if (savedTheme) {
 
 applyLanguage();
 
-/* ===============================
-   SCROLL EFFECTS
-================================ */
 window.addEventListener("scroll", () => {
     /* Navbar shadow */
     body.classList.toggle("scrolled", window.scrollY > 50);
@@ -65,9 +56,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
-/* ===============================
-   THEME TOGGLE
-================================ */
+
 themeToggle.addEventListener("click", () => {
     body.classList.toggle("dark");
     body.classList.toggle("light");
@@ -78,9 +67,7 @@ themeToggle.addEventListener("click", () => {
     themeToggle.textContent = theme === "dark" ? "☀" : "🌙";
 });
 
-/* ===============================
-   LANGUAGE TOGGLE
-================================ */
+
 function applyLanguage() {
     translatableElements.forEach(el => {
         el.textContent = el.dataset[currentLang];
@@ -97,16 +84,14 @@ langToggle.addEventListener("click", () => {
     applyLanguage();
 });
 
-/* ===============================
-   MOBILE MENU
-================================ */
+
 menuToggle.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
     menuToggle.textContent =
         mobileMenu.classList.contains("active") ? "✕" : "☰";
 });
 
-/* Close menu when clicking a link */
+
 mobileMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
         mobileMenu.classList.remove("active");
@@ -122,9 +107,6 @@ window.addEventListener("resize", () => {
     }
 });
 
-/* ===============================
-   SCROLL ANIMATIONS
-================================ */
 const animatedItems = document.querySelectorAll(
     ".section, .skill-card, .project-card, .testimonial-card, .contact-card"
 );
